@@ -1,0 +1,3 @@
+Due to the CORS policy, most browsers will not directly allow access to the game.js script using the file:/// protocol. 
+
+Because of this, in order to actually play the game the website must be open using a Web Server. This is available via extensions in programs such as VSCode, running a python script if it in installed on your machine (ex: python3 -m http.server 8001), or the CORS policy may be bypassed by disabling same-origin in your browser settings temporarilly.

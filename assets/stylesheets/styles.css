@@ -1,0 +1,294 @@
+/* Variables for Color */
+:root {
+    --black: #131417;
+    --gray: #2a2a2c;
+    --white: #f8f8f2;
+    --green: #308D46;
+    --red: #f92672;
+    --blue: #66d9ef;
+    --yellow: #e6db74;
+}
+
+/* Game Styling */
+#game-frame {
+    width: 800px;
+    height: 500px;
+    border: 2px solid var(--green);
+    background-image: url('../images/room.png');
+    image-rendering: pixelated;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 15%);
+}
+#lights {
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    top: 44px;
+    left: 398px;
+    width: 300px;
+    height: 48px;
+}
+.light {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background: url('../images/light.png') 0 0;
+    image-rendering: pixelated;
+    background-size: 96px;
+}
+.light.on {
+    background: url('../images/light.png') 48px 0;
+    image-rendering: pixelated;
+    background-size: 96px;
+}
+
+#switches {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    top: 205px;
+    left: 170px;
+    width: 175px;
+    height: 170px;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 64px;
+}
+.switch-bg {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 64px;
+    background: url('../images/switch.png') -8px 0;
+    image-rendering: pixelated;
+    top: -20px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.switch-sw {
+    position: absolute;
+    cursor: pointer;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+}
+.switch.active > .switch-bg{
+    background: url('../images/switch.png') -72px 0;
+    image-rendering: pixelated;
+}
+
+#backdrop {
+    display: block;
+    background-image: url('../images/backdrop.png');
+    width: 800px;
+    height: 500px;
+}
+#play-btn {
+    position: absolute;
+    top: 150px;
+    left: 300px;
+
+    width: 200px;
+    height: 70px;
+}
+#level-select {
+    position: absolute;
+    top: 250px;
+    left: 300px;
+
+    width: 200px;
+    height: 70px;
+}
+#container {
+    position: absolute;
+    top: 100px;
+    left: 150px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#win-screen {
+    display: block;
+    background-image: url('../images/backdrop.png');
+    width: 800px;
+    height: 500px;
+}
+#win-screen h2 {
+    position: absolute;
+    left: 30%;
+    top: 30%;
+    margin: 0px;
+    color: var(--white);
+}
+#win-screen p {
+    position: absolute;
+    left: 30%;
+    top: 40%;
+    margin: 0px;
+    white-space: pre-wrap;
+    color: var(--white);
+}
+#container button {
+    width: 75px;
+    height: 35px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    flex: 0 1 20%;
+}
+#next-lvl {
+    position: absolute;
+    top: 225px;
+    left: 485px;
+
+    width: 125px;
+    height: 50px;
+}
+#back-btn {
+    position: absolute;
+    top: 17px;
+    left: 17px;
+    background-image: url('../images/back-btn.png');
+    background-size: 50px;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    height: 50px;
+    width: 50px;
+}
+#sound-btn {
+    position: absolute;
+    top: 17px;
+    left: 72px;
+    background-image: url('../images/sound.png');
+    background-position: 50px 0;
+    background-size: 100px;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    height: 50px;
+    width: 50px;
+}
+#sound-btn.on {
+    background-position: 0 0;
+}
+#music-btn {
+    position: absolute;
+    top: 17px;
+    left: 127px;
+    background-image: url('../images/music.png');
+    background-position: 50px 0;
+    background-size: 100px;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    height: 50px;
+    width: 50px;
+}
+#music-btn.on {
+    background-position: 0 0;
+}
+#door {
+    height: 360px;
+    width: 211px;
+    left: 442px;
+    top: 92px;
+    position: absolute;
+    background: url('../images/door.png') 0 0;
+}
+#door.open {
+    background: url('../images/door.png') 211px 0;
+}
+button:hover {
+    cursor: pointer;
+}
+
+/* Main Styling */
+body {
+    background: var(--black);
+    font-family: "Montserrat";
+}
+header {
+	color: var(--white);
+	align-items: center;
+	position: fixed;
+    z-index: 1;
+}
+header nav {
+	position: fixed;
+	width: 100%;
+	top: 0;
+    left: 0;
+	background: var(--black);
+	height: 50px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border-bottom: solid;
+	border-width: 2px;
+}
+header nav ul {
+    height: 50px;
+	list-style: none;
+	display: flex;
+    padding-left: 0;
+}
+header nav li a {
+	height: 35px;
+	display: block;
+	color: var(--dark);
+	text-decoration: none;
+	font-size: 18px;
+	padding: 0 10px;
+    padding-top: 15px;
+	transition: color 0.2s linear;
+}
+header nav li a:hover {
+	color: var(--green);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    color: var(--white);
+}
+
+/* Other Pages */
+
+#about {
+    position: absolute;
+    top: 50px;
+    color: var(--white);
+    max-width: 1000px;
+}
+#newsletter {
+    position: absolute;
+    top: 50px;
+    color: var(--white);
+}
+#newsletter label {
+    display: block;
+    margin-top: 15px;
+}
+#newsletter input {
+    box-sizing: border-box;
+}
+#newsletter button {
+    margin-top: 15px;
+    display: block;
+}
